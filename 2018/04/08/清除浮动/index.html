@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Untitled Post</p>
+          <p class="title">无标题文章</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2018-04-08</span>
-            <span class="time">15:42:11</span>
+            <span class="time">15:53:41</span>
           </span>
           
         </div>
@@ -119,7 +119,7 @@
 <p>内部标签:会将这个浮动盒子的父盒子高度重新撑开.</p>
 <p>外部标签:会将这个浮动盒子的影响清除,但是不会撑开父盒子.</p>
 <p>PS:一般情况下不使用,因为这种清除浮动的方式会增加页面的标签,造成结构的混乱.</p>
-<p>###方法三:使用伪类元素来清除浮动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">	content:<span class="string">""</span>;//设置内容为空</span><br><span class="line">	display:block;//转为块级元素</span><br><span class="line">	height:0;//高度为0</span><br><span class="line">　  line-height:0;//行高为0</span><br><span class="line">　  visibility:hidden;//元素隐藏</span><br><span class="line">　  clear:both;//清除浮动</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	zoom:1;//兼容IE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###方法三:使用伪类元素来清除浮动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">	content:<span class="string">""</span>;</span><br><span class="line">	display:block;</span><br><span class="line">	height:0;</span><br><span class="line">　  line-height:0;</span><br><span class="line">　  visibility:hidden;</span><br><span class="line">　  clear:both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	zoom:1;//兼容IE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>###方法四:使用双伪元素清除浮动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,.clearfix:after &#123;</span><br><span class="line">    content: <span class="string">""</span>;</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>总的来说第一种方法会将超出部分隐藏在某些时候我们想清除浮动并且保留超出部分时做不到,第二种方法会增加许多不必要的标签,第四种不够严谨,所以我们尽量使用第三种方法来清除浮动.</p>
 
