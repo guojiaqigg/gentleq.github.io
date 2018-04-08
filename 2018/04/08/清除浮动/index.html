@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Joe Guo">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Beautiful Life"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Beautiful Life"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Beautiful Life" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Beautiful Life</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.dark.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Untitled Post</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Joe Guo</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-04-08</span>
+            <span class="time">15:32:59</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <hr>
+<h2 id="title-清除浮动"><a href="#title-清除浮动" class="headerlink" title="title:清除浮动"></a>title:清除浮动</h2><p>##浮动问题的产生:<br>    父盒子没有设置height,子盒子在父盒子中进行了float,那么由于父盒子的高度为0,下面的元素会自动补位,解决由于补位产生的问题叫浮动清除.</p>
+<p>##清除浮动的方式:</p>
+<p>###方式一:使用overflow属性来清除浮动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix&#123;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>先找到浮动盒子的父元素,再在父元素中添加一个属性:overflow:hidden,就是清除这个父元素中的子元素浮动对页面的负面影响.</p>
+<p>PS:一般情况下也不会使用这种方式,因为overflow:hidden有可能造成新的问题,将不该隐藏的地方隐藏.</p>
+<p>###方式二:使用额外标签法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix&#123;</span><br><span class="line">　　 clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在浮动的盒子之下再放一个标签,在这个标签中使用clear:both,来清除浮动对页面的影响.</p>
+<p>内部标签:会将这个浮动盒子的父盒子高度重新撑开.</p>
+<p>外部标签:会将这个浮动盒子的影响清除,但是不会撑开父盒子.</p>
+<p>PS:一般情况下不使用,因为这种清除浮动的方式会增加页面的标签,造成结构的混乱.</p>
+<p>###方法三:使用伪类元素来清除浮动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">	content:<span class="string">""</span>;//设置内容为空</span><br><span class="line">	display:block;//转为块级元素</span><br><span class="line">	height:0;//高度为0</span><br><span class="line">　  line-height:0;//行高为0</span><br><span class="line">　  visibility:hidden;//元素隐藏</span><br><span class="line">　  clear:both;//清除浮动</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	zoom:1;//兼容IE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###方法四:使用双伪元素清除浮动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,.clearfix:after &#123;</span><br><span class="line">    content: <span class="string">""</span>;</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>总的来说第一种方法会将超出部分隐藏在某些时候我们想清除浮动并且保留超出部分时做不到,第二种方法会增加许多不必要的标签,第四种不够严谨,所以我们尽量使用第三种方法来清除浮动.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
