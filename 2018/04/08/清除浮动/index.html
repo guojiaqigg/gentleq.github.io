@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="Joe Guo">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="Beautiful Life"/>
+  <meta property="og:title" content="清除浮动"/>
   <meta property="og:description" content="" />
   <meta property="og:site_name" content="Beautiful Life"/>
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:image" content="http://yoursite.com"/>
   
     <link rel="alternate" href="/atom.xml" title="Beautiful Life" type="application/atom+xml">
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">无标题文章</p>
+          <p class="title">清除浮动</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -100,27 +100,33 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2018-04-08</span>
-            <span class="time">15:53:41</span>
+            <span class="time">16:05:37</span>
           </span>
           
         </div>
         <!-- Tags -->
         
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/常见问题/">#常见问题</a>
+
+
+          </div>
+        
         <!-- Post Main Content -->
         <div class="post-content">
-          <hr>
-<h2 id="title-清除浮动"><a href="#title-清除浮动" class="headerlink" title="title:清除浮动"></a>title:清除浮动</h2><p>##浮动问题的产生:<br>    父盒子没有设置height,子盒子在父盒子中进行了float,那么由于父盒子的高度为0,下面的元素会自动补位,解决由于补位产生的问题叫浮动清除.</p>
-<p>##清除浮动的方式:</p>
-<p>###方式一:使用overflow属性来清除浮动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix&#123;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <h2 id="浮动问题的产生"><a href="#浮动问题的产生" class="headerlink" title="浮动问题的产生:"></a>浮动问题的产生:</h2><pre><code>父盒子没有设置height,子盒子在父盒子中进行了float,那么由于父盒子的高度为0,下面的元素会自动补位,解决由于补位产生的问题叫浮动清除.
+</code></pre><h2 id="清除浮动的方式"><a href="#清除浮动的方式" class="headerlink" title="清除浮动的方式:"></a>清除浮动的方式:</h2><h3 id="方式一-使用overflow属性来清除浮动"><a href="#方式一-使用overflow属性来清除浮动" class="headerlink" title="方式一:使用overflow属性来清除浮动"></a>方式一:使用overflow属性来清除浮动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix&#123;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>先找到浮动盒子的父元素,再在父元素中添加一个属性:overflow:hidden,就是清除这个父元素中的子元素浮动对页面的负面影响.</p>
 <p>PS:一般情况下也不会使用这种方式,因为overflow:hidden有可能造成新的问题,将不该隐藏的地方隐藏.</p>
-<p>###方式二:使用额外标签法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix&#123;</span><br><span class="line">　　 clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="方式二-使用额外标签法"><a href="#方式二-使用额外标签法" class="headerlink" title="方式二:使用额外标签法"></a>方式二:使用额外标签法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix&#123;</span><br><span class="line">　　 clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在浮动的盒子之下再放一个标签,在这个标签中使用clear:both,来清除浮动对页面的影响.</p>
 <p>内部标签:会将这个浮动盒子的父盒子高度重新撑开.</p>
 <p>外部标签:会将这个浮动盒子的影响清除,但是不会撑开父盒子.</p>
 <p>PS:一般情况下不使用,因为这种清除浮动的方式会增加页面的标签,造成结构的混乱.</p>
-<p>###方法三:使用伪类元素来清除浮动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">	content:<span class="string">""</span>;</span><br><span class="line">	display:block;</span><br><span class="line">	height:0;</span><br><span class="line">　  line-height:0;</span><br><span class="line">　  visibility:hidden;</span><br><span class="line">　  clear:both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	zoom:1;//兼容IE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>###方法四:使用双伪元素清除浮动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,.clearfix:after &#123;</span><br><span class="line">    content: <span class="string">""</span>;</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="方法三-使用伪类元素来清除浮动"><a href="#方法三-使用伪类元素来清除浮动" class="headerlink" title="方法三:使用伪类元素来清除浮动"></a>方法三:使用伪类元素来清除浮动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">	content: <span class="string">""</span>;</span><br><span class="line">	display: block;</span><br><span class="line">	height: 0;</span><br><span class="line">	line-height: 0;</span><br><span class="line">	visibility: hidden;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	zoom:1;//兼容IE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法四-使用双伪元素清除浮动"><a href="#方法四-使用双伪元素清除浮动" class="headerlink" title="方法四:使用双伪元素清除浮动"></a>方法四:使用双伪元素清除浮动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,.clearfix:after &#123;</span><br><span class="line">    content: <span class="string">""</span>;</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>总的来说第一种方法会将超出部分隐藏在某些时候我们想清除浮动并且保留超出部分时做不到,第二种方法会增加许多不必要的标签,第四种不够严谨,所以我们尽量使用第三种方法来清除浮动.</p>
 
         </div>
