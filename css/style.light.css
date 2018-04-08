@@ -448,11 +448,11 @@ h1, h2, h3, h4, h5, h6 {
   border: 0;
 }
 code {
-  color: #1999ec;
+  color: #ff6347;
   padding: 0 0.125rem;
   margin: 0 0.125rem;
   border-radius: 0.0625rem;
-  background-color: #f0e8df;
+  background-color: $color-pink;
 }
 @media only screen and (max-width: 414px) {
   .highlight pre {
@@ -462,17 +462,17 @@ code {
 html,
 body {
   color: #555;
-  background-color: #fff;
+  background-color: #e1e1e1;
   font-size: 100%; /* add PX (or original value) as backup */
   font-size: 100%;
 }
 a {
-  color: #1999ec;
+  color: #ff6347;
 }
 a:hover {
   text-decoration: none;
-  color: #fff;
-  background-color: #1999ec;
+  color: #e1e1e1;
+  background-color: #ff6347;
   transition: all 0.25s;
   cursor: pointer;
 }
@@ -503,7 +503,7 @@ h6 {
   -o-background-size: cover;
 }
 .site-header .page-title {
-  color: #1999ec;
+  color: #ff6347;
   text-align: center;
   text-shadow: 1px 1px 2px #555;
 }
@@ -595,7 +595,7 @@ h6 {
 .post-item-wrapper .date-and-category {
   font-size: 0.8125rem;
   text-align: center;
-  border: 1px solid #1999ec;
+  border: 1px solid #ff6347;
   border-radius: 0.1875rem;
 }
 .post-item-wrapper .date-and-category .date,
@@ -603,15 +603,15 @@ h6 {
   padding: 0.125rem 0;
 }
 .post-item-wrapper .date-and-category .date {
-  color: #1999ec;
+  color: #ff6347;
 }
 .post-item-wrapper .date-and-category .categories {
-  color: #fff;
-  background-color: #1999ec;
+  color: #e1e1e1;
+  background-color: #ff6347;
 }
 .post-item-wrapper .date-and-category .categories > a {
-  color: #fff;
-  background-color: #1999ec;
+  color: #e1e1e1;
+  background-color: #ff6347;
 }
 .post-item-wrapper .tags {
   overflow: hidden;
@@ -622,11 +622,11 @@ h6 {
   font-size: 0.8125rem;
   padding: 0 0.3125rem;
   text-align: center;
-  border: 1px solid #1999ec;
+  border: 1px solid #ff6347;
   border-radius: 0.1875rem;
 }
 .post-item-wrapper .tags .untagged {
-  color: #1999ec;
+  color: #ff6347;
 }
 @media only screen and (max-width: 768px) {
   .post-item-wrapper .date-and-category,
@@ -729,15 +729,15 @@ footer {
   display: inline-block;
 }
 .pagination > li > a {
-  color: #1999ec;
-  background-color: #fff;
-  border: 1px solid #1999ec;
+  color: #ff6347;
+  background-color: #e1e1e1;
+  border: 1px solid #ff6347;
   border-radius: 0.1875rem;
 }
 .pagination > li > a:hover {
-  color: #fff;
-  background-color: #1999ec;
-  border: 1px solid #1999ec;
+  color: #e1e1e1;
+  background-color: #ff6347;
+  border: 1px solid #ff6347;
 }
 .pagination > li > a span {
   display: inline-block;
