@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>清除浮动 | Beautiful Life</title>
+  <title>变量提升 | Beautiful Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常见问题之清除浮动">
-<meta name="keywords" content="css">
+  <meta name="description" content="变量提升和函数体的提升">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="清除浮动">
-<meta property="og:url" content="http://yoursite.com/2018/04/08/清除浮动/index.html">
+<meta property="og:title" content="变量提升">
+<meta property="og:url" content="http://yoursite.com/2018/04/11/变量提升/index.html">
 <meta property="og:site_name" content="Beautiful Life">
-<meta property="og:description" content="常见问题之清除浮动">
-<meta property="og:updated_time" content="2018-04-11T10:54:16.000Z">
+<meta property="og:description" content="变量提升和函数体的提升">
+<meta property="og:updated_time" content="2018-04-11T10:53:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="清除浮动">
-<meta name="twitter:description" content="常见问题之清除浮动">
+<meta name="twitter:title" content="变量提升">
+<meta name="twitter:description" content="变量提升和函数体的提升">
   
     <link rel="alternative" href="/atom.xml" title="Beautiful Life" type="application/atom+xml">
   
@@ -229,11 +229,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-清除浮动" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-变量提升" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/04/08/清除浮动/" class="article-date">
-      <time datetime="2018-04-08T07:06:52.000Z" itemprop="datePublished">2018-04-08</time>
+      <a href="/2018/04/11/变量提升/" class="article-date">
+      <time datetime="2018-04-11T10:32:46.000Z" itemprop="datePublished">2018-04-11</time>
 </a>
     </div>
   
@@ -246,7 +246,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      清除浮动
+      变量提升
     </h1>
   
 
@@ -257,7 +257,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -267,18 +267,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="浮动问题的产生"><a href="#浮动问题的产生" class="headerlink" title="浮动问题的产生:"></a>浮动问题的产生:</h2><pre><code>父盒子没有设置height,子盒子在父盒子中进行了float,那么由于父盒子的高度为0,下面的元素会自动补位,解决由于补位产生的问题叫浮动清除.
-</code></pre><h2 id="清除浮动的方式"><a href="#清除浮动的方式" class="headerlink" title="清除浮动的方式:"></a>清除浮动的方式:</h2><h3 id="方式一-使用overflow属性来清除浮动"><a href="#方式一-使用overflow属性来清除浮动" class="headerlink" title="方式一:使用overflow属性来清除浮动"></a>方式一:使用overflow属性来清除浮动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix&#123;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>先找到浮动盒子的父元素,再在父元素中添加一个属性:overflow:hidden,就是清除这个父元素中的子元素浮动对页面的负面影响.</p>
-<p>PS:一般情况下也不会使用这种方式,因为overflow:hidden有可能造成新的问题,将不该隐藏的地方隐藏.</p>
-<h3 id="方式二-使用额外标签法"><a href="#方式二-使用额外标签法" class="headerlink" title="方式二:使用额外标签法"></a>方式二:使用额外标签法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix&#123;</span><br><span class="line">　　 clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在浮动的盒子之下再放一个标签,在这个标签中使用clear:both,来清除浮动对页面的影响.</p>
-<p>内部标签:会将这个浮动盒子的父盒子高度重新撑开.</p>
-<p>外部标签:会将这个浮动盒子的影响清除,但是不会撑开父盒子.</p>
-<p>PS:一般情况下不使用,因为这种清除浮动的方式会增加页面的标签,造成结构的混乱.</p>
-<h3 id="方法三-使用伪类元素来清除浮动"><a href="#方法三-使用伪类元素来清除浮动" class="headerlink" title="方法三:使用伪类元素来清除浮动"></a>方法三:使用伪类元素来清除浮动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">	content: <span class="string">""</span>;</span><br><span class="line">	display: block;</span><br><span class="line">	height: 0;</span><br><span class="line">	line-height: 0;</span><br><span class="line">	visibility: hidden;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	zoom:1;//兼容IE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方法四-使用双伪元素清除浮动"><a href="#方法四-使用双伪元素清除浮动" class="headerlink" title="方法四:使用双伪元素清除浮动"></a>方法四:使用双伪元素清除浮动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,.clearfix:after &#123;</span><br><span class="line">    content: <span class="string">""</span>;</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>总的来说第一种方法会将超出部分隐藏在某些时候我们想清除浮动并且保留超出部分时做不到,第二种方法会增加许多不必要的标签,第四种不够严谨,所以我们尽量使用第三种方法来清除浮动.</p>
+        <p>###Js预解析</p>
+<h4 id="查看语法错误"><a href="#查看语法错误" class="headerlink" title="查看语法错误"></a>查看语法错误</h4><h4 id="变量声明提升和函数整体提升-变量声明提升的时候只提升变量名-不提升变量值"><a href="#变量声明提升和函数整体提升-变量声明提升的时候只提升变量名-不提升变量值" class="headerlink" title="变量声明提升和函数整体提升(变量声明提升的时候只提升变量名,不提升变量值)."></a>变量声明提升和函数整体提升(变量声明提升的时候只提升变量名,不提升变量值).</h4><h3 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var num = 10;</span><br><span class="line">fun();</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fun</span></span>()&#123;</span><br><span class="line">    console.log(num);</span><br><span class="line">    var num = 20;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印undefined;虽然内部可以访问到外部的num,但是内部可以找到已经提升的变量名num,所以用内部的,所以打印undefined.</p>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example;"></a>Example;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f2();</span><br><span class="line">   console.log(cc);</span><br><span class="line">   console.log(bb);</span><br><span class="line">   console.log(aa);</span><br><span class="line">   <span class="keyword">function</span> <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">       var aa = bb = cc = 9;</span><br><span class="line">       console.log(aa);</span><br><span class="line">       console.log(bb);</span><br><span class="line">       console.log(cc);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>最后打印出9,9,9,9,9 报错,因为bb和cc是全局变量而aa是内部的变量.</p>
 
       
       
@@ -334,13 +327,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/04/08/清除浮动/">清除浮动</a></p>
+        <p><span>本文标题:</span><a href="/2018/04/11/变量提升/">变量提升</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Joe Guo 的个人博客">Joe Guo</a></p>
-        <p><span>发布时间:</span>2018年04月08日 - 15时06分</p>
-        <p><span>最后更新:</span>2018年04月11日 - 18时54分</p>
+        <p><span>发布时间:</span>2018年04月11日 - 18时32分</p>
+        <p><span>最后更新:</span>2018年04月11日 - 18时53分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/04/08/清除浮动/" title="清除浮动">http://yoursite.com/2018/04/08/清除浮动/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/04/08/清除浮动/　　作者: Joe Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/11/变量提升/" title="变量提升">http://yoursite.com/2018/04/11/变量提升/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/04/11/变量提升/　　作者: Joe Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -353,15 +346,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/04/09/定位/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          定位
-        
-      </div>
-    </a>
   
+    <a href="/2018/04/09/定位/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">定位</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -370,7 +359,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浮动问题的产生"><span class="toc-number">1.</span> <span class="toc-text">浮动问题的产生:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清除浮动的方式"><span class="toc-number">2.</span> <span class="toc-text">清除浮动的方式:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方式一-使用overflow属性来清除浮动"><span class="toc-number">2.1.</span> <span class="toc-text">方式一:使用overflow属性来清除浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方式二-使用额外标签法"><span class="toc-number">2.2.</span> <span class="toc-text">方式二:使用额外标签法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法三-使用伪类元素来清除浮动"><span class="toc-number">2.3.</span> <span class="toc-text">方法三:使用伪类元素来清除浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法四-使用双伪元素清除浮动"><span class="toc-number">2.4.</span> <span class="toc-text">方法四:使用双伪元素清除浮动</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#查看语法错误"><span class="toc-number">1.</span> <span class="toc-text">查看语法错误</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变量声明提升和函数整体提升-变量声明提升的时候只提升变量名-不提升变量值"><span class="toc-number">2.</span> <span class="toc-text">变量声明提升和函数整体提升(变量声明提升的时候只提升变量名,不提升变量值).</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-number"></span> <span class="toc-text">Example:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-1"><span class="toc-number"></span> <span class="toc-text">Example;</span></a>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -436,13 +425,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/04/09/定位/" title="上一篇: 定位">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/04/09/定位/" title="下一篇: 定位">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/11/变量提升/">变量提升</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/09/定位/">定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/清除浮动/">清除浮动</a></li></ul>
