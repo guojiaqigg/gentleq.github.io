@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>变量提升 | Beautiful Life</title>
+  <title>for循环 | Beautiful Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="变量提升和函数体的提升">
+  <meta name="description" content="for循环简约不简单">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="变量提升">
-<meta property="og:url" content="http://yoursite.com/2018/04/11/变量提升/index.html">
+<meta property="og:title" content="for循环">
+<meta property="og:url" content="http://yoursite.com/2018/04/12/for循环/index.html">
 <meta property="og:site_name" content="Beautiful Life">
-<meta property="og:description" content="变量提升和函数体的提升">
-<meta property="og:updated_time" content="2018-04-12T14:44:57.000Z">
+<meta property="og:description" content="for循环简约不简单">
+<meta property="og:updated_time" content="2018-04-12T15:30:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="变量提升">
-<meta name="twitter:description" content="变量提升和函数体的提升">
+<meta name="twitter:title" content="for循环">
+<meta name="twitter:description" content="for循环简约不简单">
   
     <link rel="alternative" href="/atom.xml" title="Beautiful Life" type="application/atom+xml">
   
@@ -229,11 +229,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-变量提升" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-for循环" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/04/11/变量提升/" class="article-date">
-      <time datetime="2018-04-11T10:32:46.000Z" itemprop="datePublished">2018-04-11</time>
+      <a href="/2018/04/12/for循环/" class="article-date">
+      <time datetime="2018-04-12T14:41:42.000Z" itemprop="datePublished">2018-04-12</time>
 </a>
     </div>
   
@@ -246,7 +246,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      变量提升
+      for循环
     </h1>
   
 
@@ -267,10 +267,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="Js预解析"><a href="#Js预解析" class="headerlink" title="Js预解析"></a>Js预解析</h3><h4 id="查看语法错误"><a href="#查看语法错误" class="headerlink" title="查看语法错误"></a>查看语法错误</h4><h4 id="变量声明提升和函数整体提升-变量声明提升的时候只提升变量名-不提升变量值"><a href="#变量声明提升和函数整体提升-变量声明提升的时候只提升变量名-不提升变量值" class="headerlink" title="变量声明提升和函数整体提升(变量声明提升的时候只提升变量名,不提升变量值)."></a>变量声明提升和函数整体提升(变量声明提升的时候只提升变量名,不提升变量值).</h4><h3 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var num = 10;</span><br><span class="line">fun();</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fun</span></span>()&#123;</span><br><span class="line">    console.log(num);</span><br><span class="line">    var num = 20;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>打印undefined;虽然内部可以访问到外部的num,但是内部可以找到已经提升的变量名num,所以用内部的,所以打印undefined.</p>
-<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example;"></a>Example;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f2();</span><br><span class="line">   console.log(cc);</span><br><span class="line">   console.log(bb);</span><br><span class="line">   console.log(aa);</span><br><span class="line">   <span class="keyword">function</span> <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">       var aa = bb = cc = 9;</span><br><span class="line">       console.log(aa);</span><br><span class="line">       console.log(bb);</span><br><span class="line">       console.log(cc);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>最后打印出9,9,9,9,9 报错,因为bb和cc是全局变量而aa是内部的变量.</p>
+        <h3 id="for循环的定义"><a href="#for循环的定义" class="headerlink" title="for循环的定义"></a>for循环的定义</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(语句1;语句2;语句3)&#123;</span><br><span class="line">	代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>语句1:在循环（代码块）开始前执行 (可选)<br>语句2:定义运行循环（代码块）的条件,这一部分执行后只会返回true和false (可选)<br>语句3:在循环（代码块）已被执行之后执行 (可选)<br>理论上可以全为空但没有任何实际意义</p>
+<h3 id="for循环方法1"><a href="#for循环方法1" class="headerlink" title="for循环方法1"></a>for循环方法1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i=0;i&lt;arr.length;i++)&#123;</span><br><span class="line">	//<span class="keyword">do</span> something</span><br></pre></td></tr></table></figure>
+<h3 id="for循环方法2"><a href="#for循环方法2" class="headerlink" title="for循环方法2"></a>for循环方法2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i=0,len=arr.length;i&lt;len;i++)&#123;</span><br><span class="line">	//<span class="keyword">do</span> something</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="for循环方法3"><a href="#for循环方法3" class="headerlink" title="for循环方法3"></a>for循环方法3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arrs.forEach(<span class="keyword">function</span>(i)&#123;</span><br><span class="line">	//<span class="keyword">do</span> something</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
+<p>经过测试几种方法的运行时间: 方法一&gt;方法二&gt;方法三<br>第一种方法经常用,第二种方法常用在伪数组,第三种方法额…只有用jquery中each用过,其他没见过</p>
+<p>今天碰见一段代码是这样的:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i=0;i&lt;optArr.length;)&#123;</span><br><span class="line">	sel2.appendChild(optArr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>想了很久,终于明白:首先赋值i=0,执行第二个语句,返回true;将optarr数组中的第一个元素取出来,然后放入sel2中,第二轮中仍然取第一个元素,optarr数组中原来的第二个元素变成第一个元素,知道最后optArr.length=0;返回false,跳出循环.appendChild()方法是将一个元素从一个列表向另一个列表移动列表项,这是最方便的办法.</p>
+<p>虽然for循环很简单,也是我们平常的练习的时候经常用到的,但是我们要真正用到极致,还需要更加深入的理解</p>
 
       
       
@@ -326,13 +331,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/04/11/变量提升/">变量提升</a></p>
+        <p><span>本文标题:</span><a href="/2018/04/12/for循环/">for循环</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Joe Guo 的个人博客">Joe Guo</a></p>
-        <p><span>发布时间:</span>2018年04月11日 - 18时32分</p>
-        <p><span>最后更新:</span>2018年04月12日 - 22时44分</p>
+        <p><span>发布时间:</span>2018年04月12日 - 22时41分</p>
+        <p><span>最后更新:</span>2018年04月12日 - 23时30分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/04/11/变量提升/" title="变量提升">http://yoursite.com/2018/04/11/变量提升/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/04/11/变量提升/　　作者: Joe Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/12/for循环/" title="for循环">http://yoursite.com/2018/04/12/for循环/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/04/12/for循环/　　作者: Joe Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -345,18 +350,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/04/12/for循环/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          for循环
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/09/定位/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">定位</div>
+    <a href="/2018/04/11/变量提升/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">变量提升</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -367,7 +363,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Js预解析"><span class="toc-number">1.</span> <span class="toc-text">Js预解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查看语法错误"><span class="toc-number">1.1.</span> <span class="toc-text">查看语法错误</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变量声明提升和函数整体提升-变量声明提升的时候只提升变量名-不提升变量值"><span class="toc-number">1.2.</span> <span class="toc-text">变量声明提升和函数整体提升(变量声明提升的时候只提升变量名,不提升变量值).</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-number">2.</span> <span class="toc-text">Example:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-1"><span class="toc-number">3.</span> <span class="toc-text">Example;</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#for循环的定义"><span class="toc-number">1.</span> <span class="toc-text">for循环的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for循环方法1"><span class="toc-number">2.</span> <span class="toc-text">for循环方法1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for循环方法2"><span class="toc-number">3.</span> <span class="toc-text">for循环方法2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for循环方法3"><span class="toc-number">4.</span> <span class="toc-text">for循环方法3</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -433,13 +429,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/04/12/for循环/" title="上一篇: for循环">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/04/09/定位/" title="下一篇: 定位">
+            <a href="/2018/04/11/变量提升/" title="下一篇: 变量提升">
                 <i class="fa fa-angle-right"></i>
             </a>
         
