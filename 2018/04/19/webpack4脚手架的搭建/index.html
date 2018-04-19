@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>定位 | Beautiful Life</title>
+  <title>webpack4脚手架的搭建 | Beautiful Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="定位的方法">
-<meta name="keywords" content="css">
+  <meta name="description" content="webpack4.5脚手架的搭建曲折过程">
+<meta name="keywords" content="node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="定位">
-<meta property="og:url" content="http://yoursite.com/2018/04/09/定位/index.html">
+<meta property="og:title" content="webpack4脚手架的搭建">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/webpack4脚手架的搭建/index.html">
 <meta property="og:site_name" content="Beautiful Life">
-<meta property="og:description" content="定位的方法">
-<meta property="og:updated_time" content="2018-04-13T00:27:44.000Z">
+<meta property="og:description" content="webpack4.5脚手架的搭建曲折过程">
+<meta property="og:updated_time" content="2018-04-19T08:26:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="定位">
-<meta name="twitter:description" content="定位的方法">
+<meta name="twitter:title" content="webpack4脚手架的搭建">
+<meta name="twitter:description" content="webpack4.5脚手架的搭建曲折过程">
   
     <link rel="alternative" href="/atom.xml" title="Beautiful Life" type="application/atom+xml">
   
@@ -229,11 +229,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-定位" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-webpack4脚手架的搭建" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/04/09/定位/" class="article-date">
-      <time datetime="2018-04-09T00:56:25.000Z" itemprop="datePublished">2018-04-09</time>
+      <a href="/2018/04/19/webpack4脚手架的搭建/" class="article-date">
+      <time datetime="2018-04-19T08:08:24.000Z" itemprop="datePublished">2018-04-19</time>
 </a>
     </div>
   
@@ -246,7 +246,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      定位
+      webpack4脚手架的搭建
     </h1>
   
 
@@ -257,7 +257,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -267,35 +267,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>Position: left | right | top | bottom</p>
-<h3 id="静态定位"><a href="#静态定位" class="headerlink" title="静态定位"></a>静态定位</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position:static;</span><br></pre></td></tr></table></figure>
-<p>标准流.</p>
-<h3 id="绝对定位-看脸型"><a href="#绝对定位-看脸型" class="headerlink" title="绝对定位(看脸型)"></a>绝对定位(看脸型)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position:absolute;</span><br></pre></td></tr></table></figure>
-<p>特点:</p>
-<ol>
-<li>自身从浏览器出发.</li>
-<li>绝对定位之后,元素不占位置,会脱标.</li>
-<li>嵌套的盒子,父元素没有给自身绝对定位,子元素绝对定位,子元素从浏览器出发设置自身位置.</li>
-<li>嵌套的盒子,父元素绝对定位,子元素绝对定位,子元素从父元素出发设置自身位置.</li>
-<li>行内元素转成行内块.（不推荐使用）<h3 id="相对定位（自恋型）"><a href="#相对定位（自恋型）" class="headerlink" title="相对定位（自恋型）"></a>相对定位（自恋型）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position:relative;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>特点:</p>
-<ol>
-<li>位置从自身出发.</li>
-<li>设置相对定位之后,还占据原来的位置.</li>
-<li>子绝父相,子元素绝对定位,父元素相对定位.</li>
-<li>嵌套的盒子,父元素相对定位,子元素绝对定位,子元素从父元素出发设置自身位置.</li>
-<li>不能将行内元素转成行内块.<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position:fixed;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>特点:</p>
-<ol>
-<li>位置从浏览器出发.</li>
-<li>不占据原来的位置,会脱标</li>
-<li>可以将行内元素转换为行内块.（不推荐使用）</li>
-</ol>
-<h4 id="实际开发中应该尽量使用标准流-标准流解决不了的使用浮动-浮动解决不了的使用定位"><a href="#实际开发中应该尽量使用标准流-标准流解决不了的使用浮动-浮动解决不了的使用定位" class="headerlink" title="实际开发中应该尽量使用标准流,标准流解决不了的使用浮动,浮动解决不了的使用定位."></a>实际开发中应该尽量使用标准流,标准流解决不了的使用浮动,浮动解决不了的使用定位.</h4>
+        <h3 id="抽取js的公用部分common"><a href="#抽取js的公用部分common" class="headerlink" title="抽取js的公用部分common"></a>抽取js的公用部分common</h3><p>CommonsChunkPlugin被SplitChunksPlugin代替用法改变,性能提升。</p>
+<h3 id="将css单独打包"><a href="#将css单独打包" class="headerlink" title="将css单独打包"></a>将css单独打包</h3><p>ExtractTextWebpackPlugin@next或者MiniCssExtractPLugin。</p>
+<h3 id="抽取通用html文件"><a href="#抽取通用html文件" class="headerlink" title="抽取通用html文件"></a>抽取通用html文件</h3><p>HtmlWebpackPlugin。</p>
+<h3 id="ejs模板文件"><a href="#ejs模板文件" class="headerlink" title="ejs模板文件"></a>ejs模板文件</h3><p>HtmlWebpackPlugin自带的ejs语法需要html-loader</p>
+<h3 id="将图片字体打包"><a href="#将图片字体打包" class="headerlink" title="将图片字体打包"></a>将图片字体打包</h3><p>url-loader</p>
+<h3 id="整体"><a href="#整体" class="headerlink" title="整体"></a>整体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">var webpack = require(<span class="string">'webpack'</span>);</span><br><span class="line">var MiniCssExtractPlugin = require(<span class="string">"mini-css-extract-plugin"</span>);</span><br><span class="line">var HtmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line">//获取html-webpack-plugin参数的方法</span><br><span class="line">var getHtmlConfig = <span class="keyword">function</span>(name)&#123;</span><br><span class="line">	<span class="built_in">return</span>&#123;</span><br><span class="line">		template: <span class="string">'./src/view/'</span>+name+<span class="string">'.html'</span>,</span><br><span class="line">		filename: <span class="string">'view/'</span>+name+<span class="string">'.html'</span>,</span><br><span class="line">		inject: <span class="literal">true</span>,</span><br><span class="line">		<span class="built_in">hash</span>: <span class="literal">true</span>,</span><br><span class="line">		chunks: [<span class="string">'common'</span>,name]</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">//webpack config</span><br><span class="line">var config = &#123;</span><br><span class="line">	mode:<span class="string">'development'</span>,</span><br><span class="line">	entry: &#123;</span><br><span class="line">		<span class="string">'common'</span>: [<span class="string">'./src/page/common/index.js'</span>],</span><br><span class="line">		<span class="string">'index'</span>: [<span class="string">'./src/page/index/index.js'</span>],</span><br><span class="line">		<span class="string">'login'</span>: [<span class="string">'./src/page/login/index.js'</span>],</span><br><span class="line">	&#125;,</span><br><span class="line">	output: &#123;</span><br><span class="line">		publicPath : <span class="string">'dev'</span> === WEBPACK_ENV ? <span class="string">'/dist/'</span> : <span class="string">'//s.happymmall.com/mmall-fe/dist/'</span>,</span><br><span class="line">		filename: <span class="string">'js/[name].js'</span></span><br><span class="line">	&#125;,</span><br><span class="line">	optimization: &#123;</span><br><span class="line">		runtimeChunk: <span class="literal">false</span>,</span><br><span class="line">		splitChunks: &#123;</span><br><span class="line">			cacheGroups: &#123;</span><br><span class="line">				common: &#123;</span><br><span class="line">					name: <span class="string">'common'</span>,</span><br><span class="line">					chunks: <span class="string">"all"</span>,</span><br><span class="line">					minChunks: 2</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	externals: &#123;</span><br><span class="line">		<span class="string">'jquery'</span>: <span class="string">'window.jQuery'</span></span><br><span class="line">	&#125;,</span><br><span class="line">  	plugins: [</span><br><span class="line">    	new MiniCssExtractPlugin(&#123;</span><br><span class="line">      	// Options similar to the same options <span class="keyword">in</span> webpackOptions.output</span><br><span class="line">      	// both options are optional</span><br><span class="line">      		filename: <span class="string">"css/[name].css"</span>,</span><br><span class="line">      		chunkFilename: <span class="string">"[name].css"</span></span><br><span class="line">    	&#125;),</span><br><span class="line">    	new HtmlWebpackPlugin(getHtmlConfig(<span class="string">'index'</span>)),</span><br><span class="line">    	new HtmlWebpackPlugin(getHtmlConfig(<span class="string">'login'</span>))</span><br><span class="line">  	],</span><br><span class="line">  	module: &#123;</span><br><span class="line">    	rules: [</span><br><span class="line">      		&#123;//css单独打包</span><br><span class="line">        		<span class="built_in">test</span>: /\.css$/,</span><br><span class="line">        		use: [</span><br><span class="line">          			MiniCssExtractPlugin.loader,  // replace ExtractTextPlugin.extract(&#123;..&#125;)</span><br><span class="line">          			// <span class="string">"style-loader"</span>?,</span><br><span class="line">          			<span class="string">"css-loader"</span></span><br><span class="line">        		]</span><br><span class="line">      		&#125;,</span><br><span class="line">      		&#123;//模板文件的处理</span><br><span class="line">    			<span class="built_in">test</span>:/\.string$/,</span><br><span class="line">    			use: [&#123;</span><br><span class="line">    				loader: <span class="string">'html-loader'</span>,</span><br><span class="line">    				options: &#123;</span><br><span class="line">    					removeAttributeQuotes: <span class="literal">false</span></span><br><span class="line">    				&#125;</span><br><span class="line">    			&#125;]</span><br><span class="line">    		&#125;,</span><br><span class="line">      		&#123;//图片的处理</span><br><span class="line">      			<span class="built_in">test</span>: /\.(png|jpg|gif)$/,</span><br><span class="line">      			use: [&#123;</span><br><span class="line">      				loader: <span class="string">'url-loader'</span>,</span><br><span class="line">      				options: &#123;</span><br><span class="line">      					<span class="built_in">limit</span>: 2048,</span><br><span class="line">      					name: <span class="string">'resource/[name].[ext]'</span></span><br><span class="line">      				&#125;</span><br><span class="line">      			&#125;]</span><br><span class="line">      		&#125;,</span><br><span class="line">      		&#123;//字体文件的配置</span><br><span class="line">      			<span class="built_in">test</span>: /\.(eot|svg|ttf|woff|woff2|otf)$/, </span><br><span class="line">      			use: [ &#123; </span><br><span class="line">      				loader: <span class="string">'url-loader'</span>, </span><br><span class="line">      				options: &#123; </span><br><span class="line">      					<span class="built_in">limit</span>: 8192, </span><br><span class="line">      					name: <span class="string">'resource/[name].[ext]'</span> </span><br><span class="line">      				&#125; </span><br><span class="line">      			&#125;] </span><br><span class="line">      		&#125;</span><br><span class="line">   		]</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">module.exports = config;</span><br></pre></td></tr></table></figure>
       
       
         <div class="page-reward">
@@ -350,13 +327,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/04/09/定位/">定位</a></p>
+        <p><span>本文标题:</span><a href="/2018/04/19/webpack4脚手架的搭建/">webpack4脚手架的搭建</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Joe Guo 的个人博客">Joe Guo</a></p>
-        <p><span>发布时间:</span>2018年04月09日 - 08时56分</p>
-        <p><span>最后更新:</span>2018年04月13日 - 08时27分</p>
+        <p><span>发布时间:</span>2018年04月19日 - 16时08分</p>
+        <p><span>最后更新:</span>2018年04月19日 - 16时26分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/04/09/定位/" title="定位">http://yoursite.com/2018/04/09/定位/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/04/09/定位/　　作者: Joe Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/19/webpack4脚手架的搭建/" title="webpack4脚手架的搭建">http://yoursite.com/2018/04/19/webpack4脚手架的搭建/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/04/19/webpack4脚手架的搭建/　　作者: Joe Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -369,18 +346,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/04/11/变量提升/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          变量提升
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/08/清除浮动/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">清除浮动</div>
+    <a href="/2018/04/15/事件委托/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">事件委托</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -391,7 +359,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#定位"><span class="toc-number">1.</span> <span class="toc-text">定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#静态定位"><span class="toc-number">1.1.</span> <span class="toc-text">静态定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绝对定位-看脸型"><span class="toc-number">1.2.</span> <span class="toc-text">绝对定位(看脸型)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相对定位（自恋型）"><span class="toc-number">1.3.</span> <span class="toc-text">相对定位（自恋型）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#固定定位"><span class="toc-number">1.4.</span> <span class="toc-text">固定定位</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实际开发中应该尽量使用标准流-标准流解决不了的使用浮动-浮动解决不了的使用定位"><span class="toc-number">1.4.1.</span> <span class="toc-text">实际开发中应该尽量使用标准流,标准流解决不了的使用浮动,浮动解决不了的使用定位.</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#抽取js的公用部分common"><span class="toc-number">1.</span> <span class="toc-text">抽取js的公用部分common</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将css单独打包"><span class="toc-number">2.</span> <span class="toc-text">将css单独打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽取通用html文件"><span class="toc-number">3.</span> <span class="toc-text">抽取通用html文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ejs模板文件"><span class="toc-number">4.</span> <span class="toc-text">ejs模板文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将图片字体打包"><span class="toc-number">5.</span> <span class="toc-text">将图片字体打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整体"><span class="toc-number">6.</span> <span class="toc-text">整体</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -457,13 +425,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/04/11/变量提升/" title="上一篇: 变量提升">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/04/08/清除浮动/" title="下一篇: 清除浮动">
+            <a href="/2018/04/15/事件委托/" title="下一篇: 事件委托">
                 <i class="fa fa-angle-right"></i>
             </a>
         
